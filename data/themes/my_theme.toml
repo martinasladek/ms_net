@@ -5,7 +5,7 @@ name = "Mt theme"
 light = true
 
 # Primary
-primary = "#2458C0"
+primary = "#0091a8"
 
 # Menu
 menu_primary = "#172541" #header bar
