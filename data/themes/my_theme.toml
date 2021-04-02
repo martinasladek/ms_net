@@ -1,0 +1,18 @@
+# Theme metadata
+name = "Mt theme"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#2458C0"
+
+# Menu
+menu_primary = "#172541" #header bar
+menu_text = "#fff"
+menu_text_active = "#ffffff"
+menu_title = "#fff"
+
+# Home sections
+home_section_odd = "rgb(255, 255, 255)"
+home_section_even = "rgb(247, 247, 247)"

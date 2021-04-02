@@ -3,7 +3,7 @@ cms_exclude: true
 header:
   caption: ""
   image: ""
-title: Posts
+title: Blog
 type: widget_page
-view: 2
+view: 1
 ---

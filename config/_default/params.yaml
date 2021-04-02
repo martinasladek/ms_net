@@ -5,9 +5,9 @@
 
 # Appearance
 
-theme: minimal
-day_night: true
-font: ''
+theme: "my_theme"
+day_night: false
+font: 'my_theme'
 font_size: L
 
 # SEO
@@ -41,7 +41,7 @@ contact_links:
   - icon: twitter
     icon_pack: fab
     name: DM Me
-    link: 'https://twitter.com/Twitter'
+    link: 'https://twitter.com/martinasladek'
   - icon: skype
     icon_pack: fab
     name: Skype Me
@@ -59,12 +59,13 @@ contact_links:
 
 main_menu:
   enable: true
-  align: l
+  align: r
   show_logo: true
   show_language: false
   show_day_night: true
   show_search: true
   highlight_active_link: true
+  
 
 # Localization
 
