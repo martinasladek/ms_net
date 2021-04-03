@@ -4,6 +4,8 @@ header:
   caption: ""
   image: ""
 title: Blog
-type: widget_page
-view: 1
+type: docs
+view: 3
+menu:
+  tutorial
 ---

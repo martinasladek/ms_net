@@ -5,5 +5,7 @@ header:
   image: ""
 title: Posts
 type: widget_page
-view: 2
+view: 4
+menu:
+  tutorial
 ---
