@@ -1,9 +1,0 @@
----
-title: "hex"
-output: html_document
----
-It's working! 
-
-```{r, echo=FALSE}
-htmltools::includeHTML("hex_html.html")
-```
