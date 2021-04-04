@@ -4,7 +4,7 @@ header:
   caption: ""
   image: ""
 title: Blog
-type: docs
+type: widget_page
 view: 3
 menu:
   tutorial
