@@ -12,7 +12,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible; /* originally was hidden*/
   font-family: sans-serif;
   list-style-type: none;
 }
@@ -39,6 +39,8 @@ body {
   overflow: hidden;
   visibility: hidden;
   outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  -o-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+  -moz-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
   -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
       -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
           transform: rotate3d(0,0,1,-60deg) skewY(30deg);
@@ -56,6 +58,8 @@ body {
     text-align: center;
     color: #fff; /* initial subheading colour*/
     overflow: hidden;
+    -o-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+    -moz-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
     -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
         -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
             transform: skewY(-30deg) rotate3d(0,0,1,60deg);
@@ -92,10 +96,10 @@ body {
   z-index: 1;
 }
 .hex h1:before, .hex h1:after {
-  display: inline-block;
-  margin: 0 0.5em;
-  width: 0.25em;
-  height: 0.03em;
+  display: inline;  /* originally was inline block and I'm guessing margin width and height specify the dash around the title*/
+ /* margin: 0 0.5em; */
+/*  width: 0.25em; */
+/*  height: 0.03em; */
   background: #ffffff;
   content: '';
   vertical-align: middle;

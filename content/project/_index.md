@@ -5,6 +5,7 @@ type: widget
   <head>
     <link rel="stylesheet" type="text/css" href="hex.css">
   </head>
+  </br>
   <body>
     <div class="grid">
     <ul id="hexGrid">
@@ -73,6 +74,7 @@ type: widget
     </ul>
       </div>
   </body>
+  </br>
 </html>
 
 
