@@ -50,7 +50,7 @@ superuser: true
 title: Martina Sladekova
 ---
 
-I am currently in the process of building this website and will update content shortly. All information on the website, including the resumé file below, is just template placeholder while I procrastinate writing by learning html and css. 
+I am currently in the process of building this website and will update content shortly. Most of the information on the website, including the resumé file below, is just template placeholder while I put put everything together. 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
 
