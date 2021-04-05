@@ -50,8 +50,8 @@ superuser: true
 title: Martina Sladekova
 ---
 
-I am currently in the process of building this website and will update content shortly. Here's some random latin text for you to read in the meantime: 
+I am currently in the process of building this website and will update content shortly. All information on the website, including the resumé file below, is just template placeholder while I procrastinate writing by learning html and css. 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
 
-{{< icon name="download" pack="fas" >}} Download my (obviously fake) {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.

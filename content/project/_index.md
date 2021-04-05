@@ -12,9 +12,9 @@ type: widget
       <li class="hex">
         <div class="hexIn">
           <a class="hexLink" href="#">
-            <div class='img' style='background-image: url(images/assumptions_plot_1.png);'></div>
-            <h1 id="demo1">Project title</h1>
-            <p id="demo2">Some sample text about the project this hexagon leads to</p>
+            <div class='img' style='background-image: url(images/hex_test.jpg);'></div>
+            <h1 id="demo1">Project 1</h1>
+            <p id="demo2">Does this count as work? Because I'm having too much fun.</p>
           </a>
         </div>
       </li>
