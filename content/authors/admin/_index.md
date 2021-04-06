@@ -8,7 +8,7 @@ education:
   - course: MSc in Cognitive Neuroscience 
     institution: University of Sussex
     year: 2020
-  - course: BA(Hons) in Applied Psychology and Criminology
+  - course: BA (Hons) in Applied Psychology and Criminology
     institution: University of Brighton
     year: 2017
 email: ""
