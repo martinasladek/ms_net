@@ -6,12 +6,11 @@ type: page
 headless: false
 ---
 
-# Estimating the change in meta-analytic estimates after the application of publication bias adjustment methods
+# Estimating the Change in Meta-analytic Estimates after the Application of Publication Bias Adjustment Methods
+##### Sladekova, M., Webb, L., Field, A. 
 
 </br>
 
-Information about this project will be added soon. 
+**Stage:** Manuscript under review.
 
-
-Stage:  
-Collaborators: 
+Information about this project will be added soon.  

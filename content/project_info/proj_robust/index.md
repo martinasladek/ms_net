@@ -6,12 +6,11 @@ type: page
 headless: false
 ---
 
-# Robust statistical methods in Psychology
+# The Role of Robust Statistical Methods in Psychology
+##### Sladekova, M., Field, A. 
 
 </br>
 
-Information about this project will be added soon. 
+**Stage:** Literature review . 
 
-
-Stage:  
-Collaborators: 
+Information about this project will be added soon.  

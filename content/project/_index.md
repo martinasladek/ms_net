@@ -15,6 +15,7 @@ type: widget
             <div class='img' style='background-image: url(images/hex_shape_of_data.png);'></div>
             <h1 id="demo1"> Data and Models </br> in Psychology </h1>
             <p id="demo2"> Do the models in psychology meet the assumptions they rely on? </p>
+            <p id="demo3"> Learn more </p>
           </a>
         </div>
       </li>
@@ -24,6 +25,7 @@ type: widget
                 <div class='img' style='background-image: url(images/hex_nlp.png);'></div>
             <h1 id="demo1">Reporting Practices</h1>
             <p id="demo2"> Do psychologists report the statistical assumptions of the models they fit?</p>
+            <p id="demo3"> Learn more </p>
           </a>
         </div>
       </li>
@@ -33,6 +35,7 @@ type: widget
             <div class='img' style='background-image: url(images/hex_stats_practice.png);'></div>
             <h1 id="demo1">Statistical Practice</h1>
             <p id="demo2">Which aspects of statistical analysis do psychology researchers focus on?</p>
+            <p id="demo3"> Learn more </p>
           </a>
         </div>
       </li>
@@ -42,6 +45,7 @@ type: widget
             <div class='img' style='background-image: url(images/hex_robust.png);'></div>
             <h1 id="demo1">Robust Statistical Methods</h1>
             <p id="demo2"> What role can robust methods play in improving the credibility of psychology? </p>
+            <p id="demo3"> Learn more </p>
           </a>
         </div>
       </li>
@@ -51,6 +55,7 @@ type: widget
             <div class='img' style='background-image: url(images/hex_pb.png);'></div>
             <h1 id="demo1">Publication bias</h1>
             <p id="demo2">How do the results of meta-analyses change after adjusting for publication bias?</p>
+            <p id="demo3"> Learn more </p>
           </a>
         </div>
       </li>
@@ -60,15 +65,17 @@ type: widget
             <div class='img' style='background-image: url(images/hex_ma.png);'></div>
             <h1 id="demo1">Meta-analytic practice</h1>
             <p id="demo2">Do researchers conducting meta-analyses report sufficient detail about their models?</p>
+            <p id="demo3"> Learn more </p>
           </a>
         </div>
         <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="/project_info/proj_open_science">
+          <span class="hexLink">
             <div class='img' style='background-image: url(images/hex_open_science2.png);'></div>
             <h1 id="demo1">Open Science Engagement </h1>
-            <p id="demo2"> Do Phd reseachers in psychology engage with open science practices?</p>
-          </a>
+            <p id="demo2"> Do PhD researchers in psychology engage with open science practices?</p>
+            <p id="demo3" <a href="/project_info/proj_open_science"> Learn more </a></p>
+          </span>
         </div>
       </li>
     </ul>

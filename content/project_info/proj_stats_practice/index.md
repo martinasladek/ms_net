@@ -6,11 +6,11 @@ type: page
 headless: false
 ---
 
-# Statistical practice
+# Statistical Practice of Psychology Researchers
+##### Sladekova, M., Field, A. 
 
 </br>
 
-Information about this project will be added soon. 
+**Stage:** Data collection.
 
-Stage:  
-Collaborators: 
+Information about this project will be added soon.  

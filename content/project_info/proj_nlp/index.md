@@ -6,12 +6,11 @@ type: page
 headless: false
 ---
 
-# Evaluating reporting practice in Psychology using Natural Language Processing
+# Evaluating Reporting Practice in Psychology Using Natural Language Processing
+##### Sladekova, M., Field, A. 
 
 </br>
 
-Information about this project will be added soon. 
+**Stage:** Data collection and model training 
 
-
-Stage:  
-Collaborators: 
+Information about this project will be added soon.  

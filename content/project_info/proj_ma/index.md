@@ -6,12 +6,11 @@ type: page
 headless: false
 ---
 
-# Evaluating the change in meta-analytic reporting practices between 2008 and 2018
+# Evaluating the Change in Meta-analytic Reporting Practices between 2008 and 2018
+##### Avery, R., Kamar, M., Sladekova, M., Field, A. 
 
 </br>
 
-Information about this project will be added soon. 
+**Stage:** Manuscript in preparation.
 
-
-Stage:  
-Collaborators: 
+Information about this project will be added soon.  

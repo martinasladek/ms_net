@@ -6,12 +6,13 @@ type: page
 headless: false
 ---
 
-# Shape of data in Psychology
+# Data and Models in Psychology
+##### Sladekova, M., Jakeman, H., Field, A. 
 
 </br>
 
+**Stage:** Data collection completed for a pilot study. 
+
 Information about this project will be added soon.  
 
-Stage:  
-Collaborators: 
 

@@ -7,11 +7,10 @@ headless: false
 ---
 
 # PhD Psychology Students’ Perceptions, Understandings, and Experiences of Open Science
+##### Collins, L., Terry, J., Pownall, M., Sladekova, M., & Jones, A.
 
 </br>
 
-Information about this project will be added soon. 
+**Stage:** Data collection.
 
-
-Stage:  
-Collaborators: 
+Information about this project will be added soon.  
