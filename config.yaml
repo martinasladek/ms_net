@@ -6,7 +6,7 @@ theme: "starter-academic"
 
 title: "Martina Sladekova" # Website name
 baseurl: '' # Website URL
-copyright: '' # Footer text, e.g. '© {year} Me'
+copyright: '© {year} Martina Sladekova </br> Published with [Wowchemy](https://wowchemy.com) — the free, [open source](https://github.com/wowchemy/wowchemy-hugo-modules) website builder.' # Footer text, e.g. '© {year} Me'
 
 ############################
 ## LANGUAGE

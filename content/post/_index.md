@@ -9,3 +9,5 @@ view: 4
 menu:
   tutorial
 ---
+
+{{ partial "share-buttons.html" . }}
