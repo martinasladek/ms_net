@@ -1,0 +1,336 @@
+---
+title: "hex_plots"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(magrittr) 
+library(ggplot2)
+
+viridis <- readRDS("viridis.rds")
+
+```
+
+# Shape of data 
+
+```{r}
+n = 1000
+
+data <- data.frame(
+  x = c(rnorm(mean = 0 , sd = 0, n), rnorm(mean = 0, sd = 4, n/10), rnorm(mean = 0, sd = 0, n + n/10)), 
+  g = c(rep(x = 1, times = n + n/10), rep(x = 2, times =  n + n/10)) %>% as.factor()
+)
+```
+
+```{r fig.width=6, fig.height=6}
+
+ggplot2::ggplot(data = data, aes(x = x, group = g)) +
+  geom_hline(yintercept = -0.02, alpha = 0.5) +  
+  geom_density(aes(colour = g), size = 1.5) + 
+  coord_cartesian(xlim = c(-1,1), ylim = c(-1, 4)) + 
+  theme_minimal() + 
+  scale_colour_manual(values = c(viridis$green_3, viridis$purple_1)) +
+  theme(
+    legend.position = "none",
+    axis.text = element_blank(), 
+    axis.title = element_blank(), 
+    panel.background = element_rect(fill = "#f7f3e4"), 
+    panel.grid = element_line(colour = "#e6dfc3")
+  )
+
+
+#ggsave(filename = "shape_of_data.png")
+```
+
+
+# Stats practice
+
+```{r}
+x          = rep(1:50,2) + runif(200, min = -1, max = 1)
+b0         = 0
+b1         = 2
+sigma2     = x^1.8
+residual   = rnorm(x, mean = 0 , sd = sqrt(sigma2))
+y          = b0 + b1*x + residual
+mod_2      = lm(y ~ x)
+
+df_2 <- tibble(
+  residual = mod_2$residuals,
+  fitted = mod_2$fitted.values
+)
+
+```
+
+
+```{r fig.width=7, fig.height=14}
+ggplot2::ggplot(data = data_het, aes(x = fitted, y = r, colour = abs(res))) + 
+  geom_hline(yintercept = 0, alpha = 0.2) + 
+  geom_point(size = 3, colour = viridis$blue_3, alpha = 0.9) +
+  coord_cartesian(ylim = c(-4000, 4000)) + 
+  theme_minimal() + 
+  theme(
+    legend.position = "none",
+    axis.text = element_blank(), 
+    axis.title = element_blank(), 
+    panel.background = element_rect(fill = "#f7f3e4"), 
+    panel.grid = element_line(colour = "#e6dfc3")
+  )
+```
+
+```{r}
+#ggsave(filename = "stats_practice.png", width = 7, height = 14)
+```
+
+# NLP
+
+```{r}
+word <- 
+  c(rep("normality", 8), 
+    rep("outliers", 5), 
+    rep("residuals", 2),
+    rep("heteroscedasticity", 2),
+    rep("homogeneity", 6), 
+    rep("variance", 4), 
+    rep("violated", 2), 
+    rep("linearity", 1),
+    rep("robust", 2), 
+    rep("histogram", 3), 
+    rep("plots", 3),
+    rep("influential cases", 3), 
+    rep("trimmed", 3), 
+    rep("M-estimator", 1),
+    rep("Glass, 1972", 1), 
+    rep("assumption", 5)
+    )
+
+assumption_terms_dat = 
+  as.data.frame(word) %>% 
+  dplyr::group_by(word) %>% 
+  dplyr::summarise(
+    freq = dplyr::n()
+  )
+
+assumption_terms_dat
+```
+
+
+```{r}
+cloud <- wordcloud2::wordcloud2(assumption_terms_dat, 
+                                color = "#8f876a",
+                                backgroundColor = "#f7f3e4", 
+                                shape = "circle",
+                                ellipticity = 1,
+                                size = 0.45,
+                                fontFamily = "sans-serif", 
+                                minRotation = pi/2, maxRotation = pi/2,
+                                rotateRatio = 0.35
+)
+#saveRDS(cloud, "hex_nlp.rds")
+```
+
+# Robust methods 
+
+```{r fig.width=7, fig.height=14}
+robust_df <- data.frame(
+  x <- seq(-6,6,0.1), 
+  y = x/(x^2 + 22), 
+  y2 = x/(x^2 + 18),
+  y3 = x/(x^2 + 14),
+  y4 = x/(x^2 + 10)
+  
+)
+
+ggplot2::ggplot(data = robust_df) + 
+  geom_line(aes(x = x, y = y , colour = abs(y )), size = 1.5) + 
+  geom_line(aes(x = x, y = y2, colour = abs(y2)), size = 1.5) + 
+  geom_line(aes(x = x, y = y3, colour = abs(y3)), size = 1.5) + 
+  geom_line(aes(x = x, y = y4, colour = abs(y4)), size = 1.5) + 
+  scale_colour_viridis_c(end = 0.8) + 
+  coord_cartesian(ylim = c(-0.5, 0.5)) + 
+  theme_minimal() + 
+  theme(
+    legend.position = "none",
+    axis.text = element_blank(), 
+    axis.title = element_blank(), 
+    panel.background = element_rect(fill = "#f7f3e4"), 
+    panel.grid = element_line(colour = "#e6dfc3")
+  )
+
+```
+
+```{r}
+#ggsave(filename = "hex_robust.png", width = 7, height = 14)
+```
+
+# Publication bias 
+
+```{r}
+source("r_from_d.R")
+source("vr_from_vd.R")
+
+load("simData_condition_294.RData") 
+d_02_tau04_30 <- sim %>%
+  dplyr::mutate(
+    r = r_from_d(d), 
+    vr = vr_from_vd(d, v),
+    sig = dplyr::if_else(p < 0.05, "sig", "non_sig") 
+  )
+
+
+d_02_tau04_30
+```
+
+```{r}
+c294 <- d_02_tau04_30  %>% 
+  dplyr::filter(batch == 2#, 
+         #        replication == sample(1:max(replication), 1)
+  )
+
+c294_rma_sig <- metafor::rma(yi = r, vi = vr, data = c294 %>% dplyr::filter(sig == "sig"))
+c294_rma_non_sig <- metafor::rma(yi = r, vi = vr, data = c294 %>% dplyr::filter(sig == "non_sig"))
+c294_rma_all <- metafor::rma(yi = r, vi = vr, data = c294)
+
+c294_list <- list(c294 = c294,
+                  c294_rma_sig = c294_rma_sig, 
+                  c294_rma_non_sig = c294_rma_non_sig, 
+                  c294_rma_all = c294_rma_all)
+```
+
+```{r fig.width=7, fig.height=14}
+c294_sse_plot <- ggplot(data = c294_list[["c294"]], aes(r, N, colour = sig)) + 
+  geom_point(size = 2.5, aes(colour = sig),  alpha = 0.5) + 
+  #geom_vline(xintercept = c294_list[["c294_rma_all"]]$b, colour = "black", alpha = .8,) + 
+  # geom_segment(aes(x = c294_list[["c294_rma_all"]]$b, 
+  #                  y = 0, 
+  #                  xend = c294_list[["c294_rma_all"]]$b, 
+  #                  yend = 1990+3000), 
+  #              size = .5,
+  #              colour = "black", alpha = .8) + 
+  
+  
+  # geom_vline(xintercept = c294_list[["c294_rma_sig"]]$b, colour = viridis$purple_2, 
+  #            linetype = "dashed", size = .8, 
+  #            alpha = 1) + 
+  # geom_segment(aes(x = c294_list[["c294_rma_sig"]]$b, 
+  #                  y = 0, 
+  #                  xend = c294_list[["c294_rma_sig"]]$b, 
+  #                  yend = 1990+3000), 
+  #              colour = viridis$purple_2, alpha = 0.01) + 
+  
+  
+  # geom_vline(xintercept = c294_list[["c294_rma_non_sig"]]$b, colour = viridis$yellow_5, 
+  #            linetype = "dashed", size = .8, 
+  #            alpha = 1) + 
+  # geom_segment(aes(x = c294_list[["c294_rma_non_sig"]]$b, 
+  #                  y = 0, 
+  #                  xend = c294_list[["c294_rma_non_sig"]]$b, 
+  #                  yend = 1990+3000), 
+  #              linetype = "dashed", size = .8,
+  #              colour = viridis$yellow_5, alpha = 0.05) + 
+  
+  
+  coord_cartesian(ylim = c(0-3000,1990+3000)) + 
+  scale_x_continuous(breaks = c(c294_rma_sig$b %>% round(digits = 3), 
+                                c294_rma_non_sig$b %>% round(digits = 3), 
+                                c294_rma_all$b %>% round(digits = 3), 
+                                -.8, -.6, -.4, -.2, .4, .6, .8)) +
+  
+  scale_colour_manual(values = c(viridis$blue_3, viridis$purple_1)) + 
+  
+  
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(), 
+    axis.title = element_blank(),
+    panel.background = element_rect(fill = "#f7f3e4"), 
+    panel.grid = element_line(colour = "#e6dfc3"),
+    panel.grid.minor=element_blank(),
+    panel.border=element_blank(), 
+    legend.position="none"
+    
+  )
+
+c294_sse_plot
+```
+```{r}
+ggsave(filename = "hex_pb.png", width = 7, height = 14)
+```
+
+# Meta-analysis
+
+```{r}
+ma <- metafor::rma(yi = g, vi = g_v, data = d_02_tau04_30_sample)
+
+d_02_tau04_30_sample <- d_02_tau04_30 %>% 
+  dplyr::filter(batch == 1, replication == 1) %>% 
+  dplyr::mutate(
+    ci_lower = g - g_se*1.96,
+    ci_upper = g + g_se*1.96, 
+    study_id = dplyr::row_number()
+  ) %>% 
+  dplyr::filter(dplyr::row_number() %in% 1:30)
+
+d_02_tau04_30_sample
+```
+
+
+```{r fig.width=7, fig.height=14}
+p <- ggplot(data=d_02_tau04_30_sample, aes(y = study_id, 
+                                           x = g, 
+                                           xmin = ci_lower, xmax = ci_upper)) + 
+  
+  geom_segment(aes(x = ma$b,
+                   y = -20,
+                   xend = ma$b,
+                   yend = 30),
+               size = .8,
+               colour = viridis$blue_1, alpha = 0.2) +
+  
+  geom_segment(aes(x = ma$ci.lb,
+                   y = -20,
+                   xend = ma$ci.lb,
+                   yend = 30),
+               linetype = "dashed", size = .8,
+               colour = viridis$blue_1, alpha = 0.2) +
+  
+  geom_segment(aes(x = ma$ci.ub,
+                   y = -30,
+                   xend = ma$ci.ub,
+                   yend = 30),
+               linetype = "dashed", size = .8,
+               colour = viridis$blue_1, alpha = 0.2) +
+  
+  geom_point(size = 4, colour = viridis$blue_4) + 
+  
+  geom_errorbarh(height = .2, 
+                 size = 1.5,
+                 colour = viridis$blue_4) +
+  coord_cartesian(ylim = c(-5, 40), xlim = c(-3,3)) + 
+  theme_minimal() + 
+  theme(
+    legend.position = "none",
+    axis.text = element_blank(), 
+    axis.title = element_blank(), 
+    panel.background = element_rect(fill = "#f7f3e4"), 
+    panel.grid = element_line(colour = "#e6dfc3")
+  )
+
+p
+```
+
+```{r}
+#ggsave(filename = "hex_ma.png", width = 7, height = 14)
+```
+
+
+```{r}
+viridis
+```
+
+
+
+
+
+
