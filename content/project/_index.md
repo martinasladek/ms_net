@@ -74,7 +74,7 @@ type: widget
             <div class='img' style='background-image: url(images/hex_open_science2.png);'></div>
             <h1 id="demo1">Open Science Engagement </h1>
             <p id="demo2"> Do PhD researchers in psychology engage with open science practices?</p>
-            <p id="demo3" <a href="/project_info/proj_open_science"> Learn more </a></p>
+            <p id="demo3" onClick ="window.location.href='/project_info/proj_open_science';"> Learn more </p>
           </span>
         </div>
       </li>
