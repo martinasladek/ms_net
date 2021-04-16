@@ -7,7 +7,7 @@ headless: false
 ---
 
 # Evaluating the Change in Meta-analytic Reporting Practices between 2008 and 2018
-##### Avery, R., Kamar, M., Sladekova, M., Field, A. 
+##### Avery, R. A. T., Kamar, M., Sladekova, M., Field, A. P.
 
 </br>
 

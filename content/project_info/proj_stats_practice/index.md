@@ -7,7 +7,7 @@ headless: false
 ---
 
 # Statistical Practice of Psychology Researchers
-##### Sladekova, M., Field, A. 
+##### Sladekova, M., Field, A. P.
 
 </br>
 

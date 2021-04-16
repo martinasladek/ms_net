@@ -13,8 +13,8 @@ type: widget
         <div class="hexIn">
           <span class="hexLink">
             <div class='img' style='background-image: url(images/hex_shape_of_data.png);'></div>
-            <h1 id="demo1"> Data and Models </br> in Psychology </h1>
-            <p id="demo2"> Do the models in psychology meet the assumptions they rely on? </p>
+            <h1 id="demo1" tabindex="1"> Data and Models </br> in Psychology </h1>
+            <p id="demo2" tabindex="2" > Do the models in psychology meet the assumptions they rely on? </p>
             <p id="demo3" onClick ="window.location.href='/project_info/proj_shape_of_data';"> Learn more </p>
           </span>
         </div>
@@ -24,7 +24,7 @@ type: widget
           <span class="hexLink">
             <div class='img' style='background-image: url(images/hex_nlp.png);'></div>
             <h1 id="demo1">Reporting Practices</h1>
-            <p id="demo2"> Do psychologists report the statistical assumptions of the models they fit?</p>
+            <p id="demo2"> Do researchers report the statistical assumptions of the models they fit?</p>
             <p id="demo3" onClick ="window.location.href='/project_info/proj_nlp';"> Learn more </p>
           </span>
         </div>

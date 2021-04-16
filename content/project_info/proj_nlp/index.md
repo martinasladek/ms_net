@@ -6,8 +6,8 @@ type: page
 headless: false
 ---
 
-# Evaluating Reporting Practice in Psychology Using Natural Language Processing
-##### Sladekova, M., Field, A. 
+# Evaluating the Reporting Practice in Psychology Using Natural Language Processing
+##### Sladekova, M., Field, A. P.
 
 </br>
 

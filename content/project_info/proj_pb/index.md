@@ -7,7 +7,7 @@ headless: false
 ---
 
 # Estimating the Change in Meta-analytic Estimates after the Application of Publication Bias Adjustment Methods
-##### Sladekova, M., Webb, L., Field, A. 
+##### Sladekova, M., Webb, L. E. A., Field, A. P.
 
 </br>
 

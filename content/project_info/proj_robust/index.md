@@ -7,7 +7,7 @@ headless: false
 ---
 
 # The Role of Robust Statistical Methods in Psychology
-##### Sladekova, M., Field, A. 
+##### Sladekova, M., Field, A. P.
 
 </br>
 
