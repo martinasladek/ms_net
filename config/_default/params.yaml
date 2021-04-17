@@ -23,9 +23,9 @@ twitter: ''
 #email: m.sladekova@sussex.ac.uk
 #phone: 888 888 88 88
 address:
-  street: School of Pychology, Pevensey 1, Falmer
+  street: School of Pychology, Falmer
   city: Brighton
-  region: East Sussex
+  region: 
   postcode: 'BN1 9HQ'
   country: United Kingdom
   country_code: UK

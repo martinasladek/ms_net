@@ -22,7 +22,7 @@ content:
   form:
     provider: netlify
     netlify:
-      captcha: true
+      captcha: false
   
 design:
   columns: '2'
