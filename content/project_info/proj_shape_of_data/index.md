@@ -15,7 +15,7 @@ headless: false
 
 </br>
 
-<img style="float: left; margin: 10px 20px 5px 0px;" src="images/shape_of_data_hex_small.png" alt="drawing" width="75"/>
+<img style="float: left; margin: 10px 20px 5px 0px;" src="images/shape_of_data_hex_small.png" alt="plot of an overlapping normal and mixed-normal distribution" width="75"/>
 
 Psychology researchers routinely utilise General Linear Models (GLM) - like ANOVA or the *t*-test - as part of their statistical analyses. GLMs use Ordinary Least Squares estimation, which requires a number of statistical assumptions to be met in order to produce accurate and efficient estimates. With outliers present in the sample, the estimates become biased, while violations of normality and heteroscedasticity can lead to inefficiency and a loss of statistical power. 
 
