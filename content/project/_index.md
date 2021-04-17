@@ -5,7 +5,7 @@ type: widget
   <head>
     <link rel="stylesheet" type="text/css" href="hex.css">
   </head>
-  </br>
+  <p style="text-align:center; font-size: 7px;"><a style = "color:white" href = "/project_list"> Accessible list of all projects </a></p>
   <body>
     <div class="grid">
     <ul id="hexGrid">
@@ -82,6 +82,10 @@ type: widget
       </div>
   </body>
   </br>
+  </br>
+  </br>
+  </br>
+  <p style="text-align:center"><a href = "/project_list"> Accessible list of all projects </a></p>
 </html>
 
 

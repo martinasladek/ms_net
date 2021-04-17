@@ -17,7 +17,7 @@ interests:
 - Statistics and quantitative methods
 - Robust statistical methods
 - Use of statistics in Psychology
-- Machine Learning 
+- Machine learning 
 - R & Shiny 
 - Open and transparent science
 
@@ -26,11 +26,11 @@ organizations:
   url: http://www.sussex.ac.uk/psychology/research/environment/psychological-methods
 - name: University of Brighton
   url: https://blogs.brighton.ac.uk/sasspsychlabwiki/ 
-role: PhD Researcher and Psychology Technician
+role: PhD Researcher & Psychology Technician
 social:
 - icon: envelope
   icon_pack: fas
-  link: /#contact
+  link: /contact
 - display:
     header: true
   icon: twitter
@@ -42,7 +42,7 @@ social:
 #   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/martinasladek
 # - icon: linkedin
 #   icon_pack: fab
 #   link: https://www.linkedin.com/

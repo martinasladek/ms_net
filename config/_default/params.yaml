@@ -109,7 +109,7 @@ copyright_license:
   share_alike: true
   allow_commercial: false
   notice: 'This work is licensed under {license}'
-abstract_length: 135
+abstract_length: 300
 plugins_js: []
 avatar:
   gravatar: false
@@ -160,3 +160,4 @@ cms:
 icon:
   pack:
     ai: false
+    
