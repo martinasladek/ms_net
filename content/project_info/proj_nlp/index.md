@@ -17,7 +17,7 @@ headless: false
 
 </br>
 
-<img style="float: left; margin: 10px 20px 5px 0px;" src="images/nlp_hex_small.png" alt="plot of an overlapping normal and mixed-normal distribution" width="75"/> 
+<img style="float: left; margin: 10px 20px 5px 0px;" src="images/nlp_hex_small.png" alt="word-cloud featuring assumption-related terms, like normality, heteroscedasticity, outliers, variance, etc." width="75"/> 
  
 Reporting related to the statistical assumptions of OLS is rare in psychology journals. What's reported in papers may not necessarily correspond to practice because of limitations like the word limits or editorial decisions. It is nevertheless an indication of what is and isn't important for an informed interpretation of the analysis. This study aims to quantify the prevalence of OLS models in psychology as well as the frequency of assumption-related reporting and the application of robust methods. By examining the published reports, we are also hoping to learn about some common misconceptions that researchers hold about the OLS assumptions. 
 
