@@ -16,7 +16,7 @@ headless: false
 
 </br>
 
-<img style="float: left; margin: 10px 20px 5px 0px;" src="images/robust_hex_small.png" alt="scatter-plot of heteroscedastic residuals" width="75"/>
+<img style="float: left; margin: 10px 20px 5px 0px;" src="images/robust_hex_small.png" alt="plot of four overlaying redescending weight functions" width="75"/>
 
 Robust statistical methods have been around for a long time but their use in psychology is still scarce. Robust methods offer advantage to the frequently used ordinary least squares (OLS) estimation in terms of the accuracy of the estimates and the power of statistical analyses. This is especially true in situations where the assumptions of OLS are violated, [which is common in applied work](/project_info/proj_shape_of_data). 
 
