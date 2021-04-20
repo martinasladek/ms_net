@@ -33,8 +33,10 @@ content:
     tag: "robust methods"
   - name: Open Science
     tag: "open science"
-  - name: Machine Learning
-    tag: "machine learning"
+  # - name: Machine Learning
+  #   tag: "machine learning"
+  - name: Meta-Analysis
+    tag: "meta-analysis"    
   - name: Statistical practice
     tag: "statistical practice"    
 
