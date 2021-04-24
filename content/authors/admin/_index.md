@@ -52,9 +52,9 @@ title: Martina Sladekova
 
 <p style = "color:#a6a6a6"> [Disclaimer: May contain typos and odd content. I'm still in the process of putting this website together so some of the placeholder content may seem a bit off.]  </p>
 
-I am a Doctoral Researcher in Psychology at the University of Sussex. I study the statistical practice of psychology researchers with a specific focus on the application of robust statistical methods as a means of improving the credibility of findings in psychology. 
+I am a Doctoral Researcher in Psychology at the University of Sussex. I study the statistical practice of psychology researchers with a specific focus on the application of [robust statistical methods](/project_info/proj_robust) as a means of improving the credibility of findings in psychology. 
 
-My PhD research combines a range of methodologies, including large-scale reanalyses of existing research data, natural language processing with machine learning, data simulation, and online surveys of statistical practice. You can visit the [Projects](/project/) page to learn more. 
+My PhD research combines a range of methodologies, including large-scale [reanalyses of existing research data](/project_info/proj_shape_of_data), [natural language processing with machine learning](/project_info/proj_nlp), data simulation, and [online surveys of statistical practice](/project_info/proj_stats_practice). You can visit the [Projects](/project/) page to learn more. 
 
 I also work as a Psychology Technician at the University of Brighton where I support the research of psychology staff and students. My work as a technician combined with my PhD research allows me to critically study the statistical models commonly used in psychology while also remaining conscious of the challenges the applied researchers face when adopting new statistical methods. 
 
