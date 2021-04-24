@@ -16,7 +16,7 @@ highlight_name: false
 interests:
 - Statistics and quantitative methods
 - Robust statistical methods
-- Use of statistics in Psychology
+- Use of statistics in psychology
 - Machine learning 
 - R & Shiny 
 - Open and transparent science

@@ -3,7 +3,7 @@
 type: project
 title: "PhD Psychology Students’ Perceptions, Understandings, and Experiences of Open Science"
 tags: ["open science"]
-abstract: Collins, L., Terry, J., Pownall, M., & Jones, A., Sladekova, M. Abstract
+abstract: Collins, L., Terry, J., Pownall, M., & Jones, A., Sladekova, M. A mixed-methods exploration of psychology PhD researchers' engagement in open science practices like open data, preregistration, or preprints, as well as the barriers they face when trying to adopt these practices. 
 
 # Homepage is headless, other widget pages are not.
 headless: false
@@ -20,7 +20,7 @@ headless: false
 
 Open science practices have played an important role in the methodological reform aimed at improving the credibility of findings in psychology. Although psychologists are engaging in open science increasingly more often, it is still far from the norm. Early career researchers are often at the forefront of change when it comes to adopting new research practices. This project aims to learn more about psychology PhD researchers' experiences of open science.
 
-The study employs a mixed-methods approach to gain a comprehensive overview of the researchers' perceptions and understanding of open science practices such as open data and materials, open-access publishing, preregistration, or preprints. We also want to understand the barriers the researchers might face when trying to engage in open science. My role in the project is to support the quantitative analysis led by [Jenny Terry](https://www.jennyterry.co.uk) exploring the predictors of engagement in open science practices by the PhD researchers. 
+The study employs a mixed-methods approach to gain a comprehensive overview of the researchers' perceptions and understanding of open science practices such as open data and materials, open-access publishing, preregistration, preprints, or computational reproducibility. We also want to understand the barriers the researchers might face when trying to engage in open science. My role in the project is to support the quantitative analysis led by [Jenny Terry](https://www.jennyterry.co.uk) exploring the predictors of engagement in open science practices by the PhD researchers. 
 
 
 
