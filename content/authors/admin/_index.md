@@ -50,8 +50,12 @@ superuser: true
 title: Martina Sladekova
 ---
 
-I am currently in the process of building this website and will update content shortly. Most of the information on the website, including the resumé file below, is just template placeholder while I put everything together. 
+<p style = "color:#a6a6a6"> [Disclaimer: May contain typos and odd content. I'm still in the process of putting this website together so some of the placeholder content may seem a bit off.]  </p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I am a Doctoral Researcher in Psychology at the University of Sussex. I study the statistical practice of psychology researchers with a specific focus on the application of robust statistical methods as a means of improving the credibility of findings in psychology. 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+My PhD research combines a range of methodologies, including large-scale reanalyses of existing research data, natural language processing with machine learning, data simulation, and online surveys of statistical practice. You can visit the [Projects](/project/) page to learn more. 
+
+I also work as a Psychology Technician at the University of Brighton where I support the research of psychology staff and students. My work as a technician combined with my PhD research allows me to critically study the statistical models commonly used in psychology while also remaining conscious of the challenges the applied researchers face when adopting new statistical methods. 
+
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/martina_sladekova_cv_2021.pdf" "newtab" >}}CV{{< /staticref >}}.

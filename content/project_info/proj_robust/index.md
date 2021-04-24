@@ -20,9 +20,9 @@ headless: false
 
 Robust statistical methods have been around for a long time but their use in psychology is still scarce. Robust methods offer advantage to the frequently used ordinary least squares (OLS) estimation in terms of the accuracy of the estimates and the power of statistical analyses. This is especially true in situations where the assumptions of OLS are violated, [which is common in applied work](/project_info/proj_shape_of_data). 
 
-There's a variety of robust methods out there. This project focuses on primarily on bootstrapping, heteroscedasticity-consistent standard errors, trimming, and *M*-estimation, as these can be considered fairly intuitive extensions of the classic methods and they can be flexibly applied to designs typical in psychology research. The former two can improve the estimation of standard errors and confidence intervals, while the latter two also affect the point estimates. 
+There's a variety of robust methods out there. This project focuses on primarily on bootstrapping, heteroscedasticity-consistent standard errors, trimming, and *M*-estimation, as these can be considered fairly intuitive extensions of the classic methods and they can be flexibly applied to common designs in psychology research. The former two can improve the estimation of standard errors and confidence intervals, while the latter two also affect the point estimates. 
 
-This project aims to evaluate the performance of these methods in a range of situations that can be encountered in applied settings, and discuss the role these methods could play in contributing to the recent efforts to improve the credibility of findings in psychology. It will do so using a range of methods, including simulation studies and application of these methods to large sample of real datasets. 
+This project aims to evaluate the performance of these methods in a range of situations that can be encountered in applied settings, and discuss the role these methods could play in contributing to the recent efforts to improve the credibility of findings in psychology. It will do so using a range of methods, including simulation studies and application of these methods to a large sample of real datasets. 
 
 </br>
 

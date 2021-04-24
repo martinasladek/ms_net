@@ -37,7 +37,7 @@ content:
   #   tag: "machine learning"
   - name: Meta-Analysis
     tag: "meta-analysis"    
-  - name: Statistical practice
+  - name: Statistical Practice
     tag: "statistical practice"    
 
 design:
