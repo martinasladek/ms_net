@@ -1,5 +1,7 @@
 ---
 type: widget
+
+headless: true
 ---
 <html>
   <head>
