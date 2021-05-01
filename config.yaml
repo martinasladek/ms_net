@@ -29,6 +29,12 @@ module:
 ############################
 ## ADVANCED
 ############################
+params: 
+  pygmentsUseClassic: false
+  pygmentsCodefences: true
+  pygmentsUseClasses: true
+  pygmentsStyle: "monokai"
+  customCSS: "syntax.css"
 
 enableGitInfo: false
 summaryLength: 30
@@ -36,7 +42,7 @@ paginate: 10
 enableEmoji: false
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, \.xcf, _cache$]
 permalinks:
   event: '/talk/:slug/'
   authors: '/author/:slug/'
@@ -54,6 +60,7 @@ markup:
       unsafe: true
   highlight:
     codeFences: false
+    #style: monokai
   tableOfContents:
     startLevel: 2
     endLevel: 3
