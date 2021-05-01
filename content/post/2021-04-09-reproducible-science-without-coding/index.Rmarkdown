@@ -1,14 +1,14 @@
 ---
 title: Reproducible science without coding
 author: Martina Sladekova
-date: '`r Sys.Date()`'
+date: '2021-05-01'
 slug: reproducible-science-without-coding
 categories: []
 tags: ["open science", "reproducibility", "coding"]
 subtitle: ''
 summary: "Code availability can considerably improve the reproducibility of reported findings. However, writing own analysis code is not always an option for everyone. This post summarises a few key practices that can make researchers' analyses more reproducible even without the direct use of coding."
 authors: []
-lastmod: '`r Sys.Date()`'
+lastmod: '2021-05-01'
 featured: yes
 image:
   caption: ''
