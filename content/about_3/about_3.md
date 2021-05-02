@@ -1,10 +1,7 @@
 ---
 # An instance of the About widget.
 # Documentation: https://wowchemy.com/docs/page-builder/
-widget: about
-
-# Activate this widget? true/false
-active: true
+type: post
 
 # This file represents a page section.
 headless: false
