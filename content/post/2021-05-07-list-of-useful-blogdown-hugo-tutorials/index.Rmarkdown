@@ -1,7 +1,7 @@
 ---
 title: List of helpful Blogdown & Hugo tutorials
 author: Martina Sladekova
-date: '2021-05-07'
+date: '2022-05-07'
 slug: list-of-useful-blogdown-hugo-tutorials
 categories: []
 tags: ["hugo", "blogdown"]
