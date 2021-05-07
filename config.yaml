@@ -29,7 +29,7 @@ module:
 ############################
 ## ADVANCED
 ############################
-#highlightjsVersion: "9.12.0"
+highlightjsVersion: "9.12.0"
 #highlightjsCDN: "//cdnjs.cloudflare.com/ajax/libs"
 #highlightjsLang: ["r", "yaml"]
 #highlightjsTheme: "Googlecode"
@@ -64,8 +64,8 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    codeFences: true
-    style: solarized-dark
+    codeFences: false
+    style: solarised-dark
   tableOfContents:
     startLevel: 2
     endLevel: 4
