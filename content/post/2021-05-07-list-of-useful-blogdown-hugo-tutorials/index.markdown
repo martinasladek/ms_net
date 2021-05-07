@@ -8,7 +8,7 @@ tags: ["hugo", "blogdown"]
 subtitle: ''
 summary: "This post contains a collection of tutorials I've been using to put this website together, including the initial blogdown set-up, creating a floating table of content, setting up and customising syntax highlighting, and customising the fonts."
 authors: []
-lastmod: '2021-05-07T20:57:39+01:00'
+lastmod: '2021-05-07'
 featured: no
 image:
   caption: ''
