@@ -29,8 +29,8 @@ module:
 ############################
 ## ADVANCED
 ############################
-highlightjsVersion: "9.12.0"
-#highlightjsCDN: "//cdnjs.cloudflare.com/ajax/libs"
+highlightjsVersion: "10.7.2"
+highlightjsCDN: "//cdnjs.cloudflare.com/ajax/libs"
 #highlightjsLang: ["r", "yaml"]
 #highlightjsTheme: "Googlecode"
 #params: 
@@ -64,8 +64,8 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    codeFences: false
-    style: solarised-dark
+    codeFences: true
+    style: github
   tableOfContents:
     startLevel: 2
     endLevel: 4
