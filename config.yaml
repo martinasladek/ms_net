@@ -33,13 +33,13 @@ highlightjsVersion: "10.7.2"
 highlightjsCDN: "//cdnjs.cloudflare.com/ajax/libs"
 #highlightjsLang: ["r", "yaml"]
 #highlightjsTheme: "Googlecode"
-#params: 
+params: 
   #params.highlight: false
   #pygmentsUseClassic: false
   #pygmentsCodefences: true
   #pygmentsUseClasses: true
   #pygmentsStyle: "monokai"
-  #customCSS: "syntax.css"
+  customCSS: "mono-blue-modified.css"
 
 enableGitInfo: false
 summaryLength: 30
@@ -64,7 +64,7 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    codeFences: true
+    codeFences: false
     style: github
   tableOfContents:
     startLevel: 2

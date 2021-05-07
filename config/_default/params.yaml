@@ -9,6 +9,7 @@ theme: "my_theme"
 day_night: false
 font: 'my_theme'
 font_size: M
+customCSS: "mono-blue-modified.css"
 
 # SEO
 
@@ -75,7 +76,7 @@ address_format: en-us
 
 # Site features
 
-highlight: false
+highlight: true
 highlight_languages:
   - r
   - python
