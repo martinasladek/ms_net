@@ -2,11 +2,11 @@
 name = "Minimal"
 
 # Optional Google font URL
-google_fonts = "family=Open+Sans:wght@300&display=swap"
+#google_fonts = "family=Open+Sans:wght@300&display=swap"
 
 
 # Font families
 heading_font = "Open Sans"
 body_font = "Open Sans"
 nav_font = "Open Sans"
-mono_font = "Open Sans"
+mono_font = "Roboto Mono"

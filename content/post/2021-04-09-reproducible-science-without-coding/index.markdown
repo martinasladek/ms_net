@@ -75,11 +75,12 @@ Same goes for psychometric measures and scores from individual items - the datas
 
 You don't need to code to be able to share the analysis syntax. Every time you run a command in SPSS, the output provides you with the code that runs in the background. For example running an ANOVA through: 
 
-`Analyze > General Linear Model > Univariate`
+` Analyze > General Linear Model > Univariate `
 
 prints two things into your output file. Your analysis results, but also the syntax that corresponds to the above commands. The syntax always comes before the actual stats results, and in this case looks like: 
 
-```
+
+```r
 UNIANOVA anxiety BY intervention_categorical 
   /METHOD=SSTYPE(3) 
   /INTERCEPT=INCLUDE 
@@ -95,7 +96,7 @@ An effortless thing to do is to simply upload the output file with the **.spv** 
 
 **Exporting code from Jamovi or JASP.** Like SPSS, [Jamovi](https://www.jamovi.org) and [JASP](https://jasp-stats.org) have a point-and-click interface and don't require the knowledge of coding. That's about where the similarities end. Jamovi and JASP are free, intuitive to learn, and generally a lot more pleasant to use. If you haven't tried them out yet, you should give it a go. 
 
-Both pieces of software run R under the hood. JASP doesn't seem to have the functionality to export code at the moment, but [it seems like this is planned for future releases.](https://jasp-stats.org/faq/jasp-uses-r-analyses-possible-export-r-code-used-analysis/). Jamovi has the advantage of being able to display the code directly - you can add the code into the output by clicking the three dots in the top right and selecting **Syntax mode**: 
+Both pieces of software run R under the hood. JASP doesn't seem to have the functionality to export code at the moment, but [it seems like this is planned for future releases](https://jasp-stats.org/faq/jasp-uses-r-analyses-possible-export-r-code-used-analysis/). Jamovi has the advantage of being able to display the code directly - you can add the code into the output by clicking the three dots in the top right and selecting **Syntax mode**: 
 
 <img src="images/jamovi_syntax.gif" alt="gif showing how to toggle the Syntax Mode (described in the main text)" class="center">
 

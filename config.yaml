@@ -29,12 +29,17 @@ module:
 ############################
 ## ADVANCED
 ############################
-params: 
-  pygmentsUseClassic: false
-  pygmentsCodefences: true
-  pygmentsUseClasses: true
-  pygmentsStyle: "monokai"
-  customCSS: "syntax.css"
+#highlightjsVersion: "9.12.0"
+#highlightjsCDN: "//cdnjs.cloudflare.com/ajax/libs"
+#highlightjsLang: ["r", "yaml"]
+#highlightjsTheme: "Googlecode"
+#params: 
+  #params.highlight: false
+  #pygmentsUseClassic: false
+  #pygmentsCodefences: true
+  #pygmentsUseClasses: true
+  #pygmentsStyle: "monokai"
+  #customCSS: "syntax.css"
 
 enableGitInfo: false
 summaryLength: 30
@@ -59,11 +64,11 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    codeFences: false
-    #style: monokai
+    codeFences: true
+    style: solarized-dark
   tableOfContents:
     startLevel: 2
-    endLevel: 3
+    endLevel: 4
 imaging:
   resampleFilter: lanczos
   quality: 75
