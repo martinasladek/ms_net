@@ -65,7 +65,7 @@ markup:
       unsafe: true
   highlight:
     codeFences: true
-    style: github
+    style: solarized-dark
   tableOfContents:
     startLevel: 2
     endLevel: 4
