@@ -22,7 +22,7 @@ This post contains a collection of tutorials I've been using to put this website
 
 Credit where it's due, the people below deserve a shout-out for informing how this website was built, in one way or another: 
 
-- <a href="https://alison.rbind.io" target="_blank"> Alison Hill </a> has written a wealth of tutorials about Blogdown. 
+- [Alison Hill](https://alison.rbind.io) has written a wealth of tutorials about Blogdown. 
 - [Amber Thomas](https://amber.rbind.io) has a great tutorial on implementing syntax highlighting with highlight.js
 - [Chris Lockard](https://www.chrislockard.net) writes about cybersecurity, and I used their tutorial for customising fonts. 
 - [Daniel Quintana](https://www.dsquintana.com) whose tutorial on building websites with Hugo was my starting point.
@@ -36,7 +36,7 @@ Credit where it's due, the people below deserve a shout-out for informing how th
 
 I followed the tutorial below when setting up this website: 
 
-- https://alison.rbind.io/post/new-year-new-blogdown/ 
+- [https://alison.rbind.io/post/new-year-new-blogdown/](https://alison.rbind.io/post/new-year-new-blogdown/)
 
 Alternative approach (using visual studio) is described here: 
 
