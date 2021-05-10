@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {{ $page := . }}
 {{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
 {{ $anchor := $page.Params.image.focal_point | default "Smart" }}
@@ -99,7 +100,8 @@
     {{ partial "page_links_div.html" $page }}
   {{end}}
 </div>
-<link rel="stylesheet" href="{{"css/mono-blue-modified.css" | absURL}}" rel="stylesheet" id="theme-stylesheet">
-<script src="{{ "js/highlight.pack.js/" | absURL }}"></script>
+<link rel="stylesheet" href="{{"../css/mono-blue-modified.css" | absURL}}" id="theme-stylesheet">
+<script src="{{ "../js/highlight.pack.js" | absURL }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 {{end}}
+
