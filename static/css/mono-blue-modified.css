@@ -5,7 +5,7 @@
   display: block;
   overflow-x: auto;
   padding: 1.5em;
-  background: #f5f5f5;
+  background: #f0f3f7;
   color: #00193a;
 }
 
@@ -57,5 +57,5 @@
 
 code {
   color: #172541;
-  background: #f5f5f5;
+  background: #f0f3f7;
 }
