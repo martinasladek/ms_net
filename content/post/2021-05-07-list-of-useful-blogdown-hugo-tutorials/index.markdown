@@ -1,7 +1,7 @@
 ---
 title: List of helpful Blogdown & Hugo tutorials
 author: Martina Sladekova
-date: '2022-05-07'
+date: '2021-05-07'
 slug: list-of-useful-blogdown-hugo-tutorials
 categories: []
 tags: ["hugo", "blogdown"]
@@ -22,12 +22,13 @@ This post contains a collection of tutorials I've been using to put this website
 
 Credit where it's due, the people below deserve a shout-out for informing how this website was built, in one way or another: 
 
-- [Alison Hill](https://alison.rbind.io) has written a wealth of tutorials about Blogdown. 
+- <a href="https://alison.rbind.io" target="_blank"> Alison Hill </a> has written a wealth of tutorials about Blogdown. 
 - [Amber Thomas](https://amber.rbind.io) has a great tutorial on implementing syntax highlighting with highlight.js
 - [Chris Lockard](https://www.chrislockard.net) writes about cybersecurity, and I used their tutorial for customising fonts. 
 - [Daniel Quintana](https://www.dsquintana.com) whose tutorial on building websites with Hugo was my starting point.
 - [Eric Fong](http://ericfong.ca) has written a tutorial on how to build a floating table of content. 
 - [Jenny Terry](https://jennyterry.co.uk) has a really cool website and gave me the necessary nudge towards building my own.
+- [Tom Spencer](https://www.tomspencer.dev) explains how to debug syntax highlighting if the problem is the Netlify Hugo version
 
 </br>
 
@@ -61,7 +62,7 @@ Hugo version **0.82.0** uses `chroma` highlighting by default. This is set in `c
 
 A lot of tutorials point to `pygments` which need Python to run. I wasn't able to get `pygments` into a functional state, because frankly, I know very little about Python, and while the `pip` command amuses me (I don't know why), I'm still determined to keep avoiding Python for at least another couple of months.[^1]
 
-`highlight.js` worked like magic. This tutorial is very detailed and contains helpful troubleshooting: 
+`highlight.js` worked, after a small amount of swearing. This tutorial is very detailed and contains helpful troubleshooting: 
 
 - https://amber.rbind.io/2017/11/15/syntaxhighlighting/ 
 
@@ -88,11 +89,15 @@ Additional tutorial for syntax highlighting which also signposts to Amber Thomas
 
 One thing worth pointing out is that both of these tutorials advise editing and overwriting files in the `website_name/themes/...` directory. All Hugo and Academic tutorials advise recommend against this as it's too easy to mess things up to a point of no return. A safer approach when overwriting any default settings is to locate the relevant **.html** or **.css** file in the directory of the theme, then copy it into a folder in the root directory. For example, for the `page_header.html`, I copied a file located here: 
 
-`website_name/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/layouts/partials/page_header.html`
+```
+website_name/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/layouts/partials/page_header.html
+```
 
 into this directory:
 
-`website_name/layouts/partials/page_header.html`
+```
+website_name/layouts/partials/page_header.html
+```
 
 Moving on before this turns into a Hugo tutorial which I'm highly unqualified to write.
 
@@ -127,6 +132,32 @@ code {
 </style>
 
 needs to be added into the **.css** for the theme from `highlight.js` with `color` and `background` attributes.
+
+**If the syntax is highlighting on a local preview but not after deployment** there might be a problem either with the Hugo version that Netlify uses to build the website (likely if you build your website a while back). This tutorial explains how to set the Hugo version: 
+
+- https://www.tomspencer.dev/blog/2018/08/03/deploying-a-hugo-powered-site-to-netlify-with-source-code-syntax-highlighting/
+
+It turns out that my issue was with the file path to `highlight.pack.js` and the corresponding css file. After following Amber Thomas's tutorial, the code snippet I added was the one below: 
+
+
+```js
+<link rel="stylesheet" href="{{"css/mono-blue-modified.css" | absURL}}" id="theme-stylesheet">
+<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+```
+
+but it was missing a "/" in the file path to the css file and the js file. So the two paths should have been `/css/mono-blue-modified.css` and `/js/highlight.pack.js`: 
+
+
+```js
+<link rel="stylesheet" href="{{"/css/mono-blue-modified.css" | absURL}}" id="theme-stylesheet">
+<script src="{{ "/js/highlight.pack.js" | absURL }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+```
+
+This might be a quirk of the Academic theme, or it might be the result of copying into `partials` instead of directly editing the original theme files. More discussion and possible solutions here: 
+
+- https://stackoverflow.com/questions/40728554/resource-blocked-due-to-mime-type-mismatch-x-content-type-options-nosniff/41319855
 
 </br>
 
