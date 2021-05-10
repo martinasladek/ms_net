@@ -29,17 +29,17 @@ module:
 ############################
 ## ADVANCED
 ############################
-highlightjsVersion: "10.7.2"
-highlightjsCDN: "//cdnjs.cloudflare.com/ajax/libs"
+highlightjsVersion: "10.7.0"
+#highlightjsCDN: "//cdnjs.cloudflare.com/ajax/libs"
 #highlightjsLang: ["r", "yaml"]
 #highlightjsTheme: "Googlecode"
 params: 
-  #params.highlight: false
-  #pygmentsUseClassic: false
-  #pygmentsCodefences: true
-  #pygmentsUseClasses: true
+  params.highlight: false
+  pygmentsUseClassic: false
+  pygmentsCodefences: true
+  pygmentsUseClasses: true
   #pygmentsStyle: "monokai"
-  customCSS: "mono-blue-modified.css"
+  #customCSS: "syntax.css"
 
 enableGitInfo: false
 summaryLength: 30
@@ -64,7 +64,7 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    codeFences: false
+    codeFences: true
     style: github
   tableOfContents:
     startLevel: 2
