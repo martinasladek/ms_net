@@ -1,0 +1,24 @@
+---
+title: Robust statistics in JASP and Jamovi
+author: Martina Sladekova
+date: '2022-05-11'
+slug: robust-statistics-in-jasp-and-jamovi
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-05-11'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+# JASP
+
+- Descriptives: 
+    - Robust MAD 
+    - BCa bootstrap for marginal means

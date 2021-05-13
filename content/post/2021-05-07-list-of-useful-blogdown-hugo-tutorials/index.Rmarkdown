@@ -86,7 +86,7 @@ Additional tutorial for syntax highlighting which also signposts to Amber Thomas
 
 - [https://www.r-bloggers.com/2019/07/adding-syntax-highlight/](https://www.r-bloggers.com/2019/07/adding-syntax-highlight/) 
 
-One thing worth pointing out is that both of these tutorials advise editing and overwriting files in the `website_name/themes/...` directory. All Hugo and Academic tutorials advise recommend against this as it's too easy to mess things up to a point of no return. A safer approach when overwriting any default settings is to locate the relevant **.html** or **.css** file in the directory of the theme, then copy it into a folder in the root directory. For example, for the `page_header.html`, I copied a file located here: 
+One thing worth pointing out is that both of these tutorials advise editing and overwriting files in the `website_name/themes/...` directory. All Hugo and Academic tutorials recommend against this as it's too easy to mess things up to a point of no return. A safer approach when overwriting any default settings is to locate the relevant **.html** or **.css** file in the directory of the theme, then copy it into a folder in the root directory. For example, for the `page_header.html`, I copied a file located here: 
 
 ```
 website_name/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/layouts/partials/page_header.html
