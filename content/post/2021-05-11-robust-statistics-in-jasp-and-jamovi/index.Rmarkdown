@@ -6,7 +6,7 @@ slug: robust-statistics-in-jasp-and-jamovi
 categories: []
 tags: ["coding", "robust methods", "software"]
 subtitle: ''
-summary: ''
+summary: 'There are *lots* of methods out there that belong under the "robust" umbrella term. So many that you could fit them into a ~800 page book on robust estimation and call it an "introduction". This post summarises their availability in  statistical packages.'
 authors: []
 lastmod: '2021-05-24'
 featured: no
