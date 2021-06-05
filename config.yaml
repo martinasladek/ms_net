@@ -41,6 +41,7 @@ params:
   #pygmentsStyle: "monokai"
   #customCSS: "syntax.css"
 
+
 enableGitInfo: false
 summaryLength: 30
 paginate: 10
@@ -66,6 +67,7 @@ markup:
   highlight:
     codeFences: true
     style: solarized-dark
+  #math: true  
   tableOfContents:
     startLevel: 2
     endLevel: 4

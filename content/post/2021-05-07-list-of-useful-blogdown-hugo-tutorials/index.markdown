@@ -27,6 +27,7 @@ Credit where it's due, the people below deserve a shout-out for informing how th
 - [Chris Lockard](https://www.chrislockard.net) writes about cybersecurity, and I used their tutorial for customising fonts. 
 - [Daniel Quintana](https://www.dsquintana.com) whose tutorial on building websites with Hugo was my starting point.
 - [Eric Fong](http://ericfong.ca) has written a tutorial on how to build a floating table of content. 
+- [Geoff Ruddock](https://geoffruddock.com) has written a post on how to get maths and equations working in the latest version of Hugo.
 - [Jenny Terry](https://jennyterry.co.uk) has a really cool website and gave me the necessary nudge towards building my own.
 - [Tom Spencer](https://www.tomspencer.dev) explains how to debug syntax highlighting if the problem is the Netlify Hugo version
 
@@ -87,7 +88,7 @@ Additional tutorial for syntax highlighting which also signposts to Amber Thomas
 
 - [https://www.r-bloggers.com/2019/07/adding-syntax-highlight/](https://www.r-bloggers.com/2019/07/adding-syntax-highlight/) 
 
-One thing worth pointing out is that both of these tutorials advise editing and overwriting files in the `website_name/themes/...` directory. All Hugo and Academic tutorials advise recommend against this as it's too easy to mess things up to a point of no return. A safer approach when overwriting any default settings is to locate the relevant **.html** or **.css** file in the directory of the theme, then copy it into a folder in the root directory. For example, for the `page_header.html`, I copied a file located here: 
+One thing worth pointing out is that both of these tutorials advise editing and overwriting files in the `website_name/themes/...` directory. All Hugo and Academic tutorials recommend against this as it's too easy to mess things up to a point of no return. A safer approach when overwriting any default settings is to locate the relevant **.html** or **.css** file in the directory of the theme, then copy it into a folder in the root directory. For example, for the `page_header.html`, I copied a file located here: 
 
 ```
 website_name/themes/github.com/wowchemy/wowchemy-hugo-modules/wowchemy/layouts/partials/page_header.html
@@ -159,10 +160,6 @@ code {
 
 needs to be added into the **.css** for the theme from `highlight.js` with `color` and `background` attributes.
 
-
-
-</br>
-
 ## Set custom fonts
 
 The guidance on this provided by Hugo is fairly clear: 
@@ -177,7 +174,16 @@ in the custom `my_theme.toml` file sets the font for the whole website and overw
 
 - [https://www.chrislockard.net/posts/using-local-fonts-hugo-academic-theme/](https://www.chrislockard.net/posts/using-local-fonts-hugo-academic-theme/)
 
-Chris also makes a very good point of storing and reading the font files locally, instead of directly from Google fonts, to prevent Google from tracking users on your page. 
+Chris also makes a very good point of storing and reading the font files locally, instead of directly from Google fonts, to prevent Google from tracking users on your page.  
+
+## Display equations
+
+Section **Adapted for MathJax 3** in the post below has a fairly straightforward explanation on how to get equations working if you're knitting in markdown: 
+
+- [https://geoffruddock.com/math-typesetting-in-hugo/](https://geoffruddock.com/math-typesetting-in-hugo/)
+
+</br>
+
 
 </br>
 

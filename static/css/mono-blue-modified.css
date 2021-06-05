@@ -59,3 +59,10 @@ code {
   color: #172541;
   background: #f2f2f2;
 }
+
+code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+}
