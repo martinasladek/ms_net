@@ -1,7 +1,7 @@
 ---
 title: 'TIL: Matching position_jitter() of points and lines in ggplot2'
 author: Martina Sladekova
-date: '2021-09-12'
+date: '2025-09-12'
 slug: til-matching-position-jitter-of-points-and-lines-in-ggplot2
 categories: []
 tags: []
