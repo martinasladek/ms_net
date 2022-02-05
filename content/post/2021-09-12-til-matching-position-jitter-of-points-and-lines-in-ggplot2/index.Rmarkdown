@@ -1,0 +1,113 @@
+---
+title: 'TIL: Matching position_jitter() of points and lines in ggplot2'
+author: Martina Sladekova
+date: '2025-09-12'
+slug: til-matching-position-jitter-of-points-and-lines-in-ggplot2
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-12T20:37:51+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r echo = FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+
+library(ggplot2)
+library(magrittr)
+```
+
+
+**TL;DR:** The data used for plotting need to be ordered by id and the grouping variable. The points and lines also need an identical seed setting in the position argument. Full code minus the waffle is at the end of the post. 
+
+<br>
+
+## The problem 
+
+`position_jitter()` in ggplot2 is a great tool for clearly displaying raw data overlaid by the key summary statistics. Take a look at the data below:
+
+```{r echo = FALSE}
+n = 70
+min = 190
+set.seed(5)
+
+rt1 = truncnorm::rtruncnorm(n = n, a = min, mean = 500, sd = 50)
+rt2 = truncnorm::rtruncnorm(n = n, a = min, mean = 485, sd = 60)
+rt3 = truncnorm::rtruncnorm(n = n, a = min, mean = 450, sd = 70)
+rt4 = truncnorm::rtruncnorm(n = n, a = min, mean = 375, sd = 80)
+rt5 = truncnorm::rtruncnorm(n = n, a = min, mean = 250, sd = 100)
+
+data = data.frame(
+  id = rep(1:n, times = 5), 
+  rt = c(rt1, rt2, rt3, rt4, rt5),
+  time = rep(1:5, each = n)
+) %>% 
+  dplyr::arrange(id, time)
+
+```
+
+```{r echo = FALSE}
+data %>% 
+  knitr::kable() %>% 
+  kableExtra::kable_styling(
+    bootstrap_options = "responsive"
+    ) %>% 
+  kableExtra::scroll_box(height = "300px") 
+```
+
+<br>
+
+We've got the data in a long format - there are 70 participants, for each one we've for five reaction time (RT) measures at five time points. Note that time point is aligned to the right - this means that `R` is treating it as a numeric variable, and not a factor or a character vector[^1]. That's fine for this example. If we want to see how the RTs differ at each time point, we could do a simple means plot with bootstrapped confidence intervals: 
+
+```{r, fig.width=6, fig.height=4}
+data %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) + 
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  theme_bw()
+```
+
+<br>
+
+A plot like this makes is way too easy to ignore potentially messy aspects of our data. We can add `geom_point()` and use `position = position_jitter()` to scatter the position of the points a little so they're not stacked on top of each other. I'm also changing the `alpha` argument to make the points more see-through. 
+
+```{r, fig.width=6, fig.height=4}
+data %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) + 
+  geom_point(alpha = 0.2, position = position_jitter(width = 0.1)) + 
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  theme_bw()
+```
+
+<br>
+
+That's a little better - now we can see the spread of data at each time point, including level of overlap and any potentially extreme scores. We can also see that the variance increases with time, which could cause issues depending on the kind of model we intend to fit.  
+
+I would normally treat this as a multilevel (or mixed effects) model - where the reaction time data for each time point are nested within the participants. In such context, it can be useful to also plot the lines that link the participants' scores between the time-points. 
+
+```{r fig.width=6, fig.height=4}
+data %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) +
+  geom_path(size = 0.2, alpha = 0.1) + 
+  geom_point(alpha = 0.2, position = position_jitter(width = 0.1)) + 
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  theme_bw()
+```
+<br>
+
+Granted, this starting to look chaotic, but the chaos can be interesting - I don't need to be able to track each individual line to see that for some participants, the reaction times from one time-point to the next go up, while for others they go down (and may go up at the next time point). If I'm fitting a multilevel model, I might want to add a random effect of time to account for this. 
+
+Though if you look at the plot more closely, you might be able to finally see the whole reason behind this mini-blog: the points and the lines are not connected properly. Each line and each point corresponds to a participant, but the lines have different starting points. We can zoom in on the second time point: 
+
+
+
+
+
+
+[^1]: This is also true for SPSS and Excel, and it's the reason why it's almost never a good idea to change the default alignment of the columns. Seeing how columns are aligned can be a helpful debugging hint when the software just won't do what you're asking it to do. Numeric values are aligned to the right. Strings and factors should be aligned to the left.  

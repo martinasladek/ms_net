@@ -1,0 +1,100 @@
+---
+title: "c294_script"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+load("../data/carter_sim_data/sse_explore/tau_high/simData_condition_294.RData") 
+d_02_tau04_30 <- sim %>%
+  mutate(
+    r = r_from_d(d), 
+    vr = vr_from_vd(d, v),
+    sig = if_else(p < 0.05, "sig", "non_sig") 
+  )
+```
+
+```{r}
+c294 <- d_02_tau04_30  %>% 
+  filter(batch == 2#, 
+         #        replication == sample(1:max(replication), 1)
+  )
+
+c294_rma_sig <- rma(yi = r, vi = vr, data = c294 %>% filter(sig == "sig"))
+c294_rma_non_sig <- rma(yi = r, vi = vr, data = c294 %>% filter(sig == "non_sig"))
+c294_rma_all <- rma(yi = r, vi = vr, data = c294)
+
+c294_list <- list(c294 = c294,
+                  c294_rma_sig = c294_rma_sig, 
+                  c294_rma_non_sig = c294_rma_non_sig, 
+                  c294_rma_all = c294_rma_all)
+
+saveRDS(c294_list, "../writeup_figures/c294_list.rds")
+
+```
+
+```{r}
+c294 %>%
+  group_by(sig) %>%
+  summarise(
+    n = n(),
+  ) %>%
+  mutate(
+    percent = n/sum(n)*100
+  )
+```
+
+
+```{r fig.width=8, fig.height=7}
+c294_sse_plot <- ggplot(data = c294_list[["c294"]], aes(r, N, colour = sig)) + 
+  geom_point(aes(alpha = sig), size = 1.5) + 
+  geom_vline(xintercept = c294_list[["c294_rma_all"]]$b, colour = "black", alpha = .8) + 
+  geom_vline(xintercept = c294_list[["c294_rma_sig"]]$b, colour = viridis$purple_2, 
+             linetype = "dashed", size = .8, 
+             alpha = 1) + 
+  geom_vline(xintercept = c294_list[["c294_rma_non_sig"]]$b, colour = viridis$yellow_5, 
+             linetype = "dashed", size = .8, 
+             alpha = 1) + 
+  coord_cartesian(ylim = c(0,1990)) + 
+  scale_x_continuous(breaks = c(c294_rma_sig$b %>% round(digits = 3), 
+                                c294_rma_non_sig$b %>% round(digits = 3), 
+                                c294_rma_all$b %>% round(digits = 3), 
+                                -.8, -.6, -.4, -.2, .4, .6, .8)) +
+  
+  labs(title = "", 
+       x = expression(paste("Observed outcome"," ", "(", italic("r"), ")")), 
+       y = expression(paste("Sample size"," ", " ", "(", italic("N"), ")")), 
+       colour = "", 
+       alpha = ""
+       ) + 
+  
+  scale_colour_manual(values = c(viridis$yellow_3, viridis$purple_2), labels = c(expression(paste(italic("p")," ", "> .05")), 
+                                                                                 expression(paste(italic("p")," ", "< .05")))) + 
+  scale_alpha_manual(values = c(.5, .5), labels = c(expression(paste(italic("p")," ", "> .05")),
+                                                    expression(paste(italic("p")," ", "< .05")))) + 
+  
+  # annotate("text", x = 0, y = 1500, label = "This is an alt text, this is an alt text, \n 
+  #          this is an alt text, this is an alt text, this is an alt text, \n 
+  #          this is an alt text, this is an alt text, this is an alt text, \n 
+  #          this is an alt text", 
+  #          alpha = 0) + 
+  
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5), 
+    axis.title.x = element_text(vjust = -1.5),
+    title = element_text(family = 'serif', size = 12),
+    panel.grid.major=element_line(colour = '#f7f7f7'),
+    panel.grid.minor=element_blank(),
+    panel.border=element_blank(), 
+    legend.position=c(.9, .98), 
+    legend.box = 'horizontal', 
+    #legend.justification = 'center', 
+    legend.text = element_text(family = 'serif', size = 12)
+    
+  )
+
+c294_sse_plot 
+
+#ggsave(plot = c294_sse_plot, filename = "../figures/sim_figures/c294_sse_plot.png")
+saveRDS(c294_sse_plot, "../writeup_figures/c294_sse_plot.rds")
+```

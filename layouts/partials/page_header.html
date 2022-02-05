@@ -8,12 +8,14 @@
 {{ if and (not $title) .IsNode }}
   {{ if eq .Type "post" }}
     {{ $title = i18n "posts" }}
+    {{ $title | markdownify }}
   {{ else if eq .Type "event" }}
     {{ $title = i18n "talks" }}
   {{ else if eq .Type "publication" }}
     {{ $title = i18n "publications" }}
   {{end}}
 {{end}}
+
 
 {{/* Header image */}}
 {{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) }}

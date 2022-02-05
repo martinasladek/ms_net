@@ -62,6 +62,8 @@ outputs:
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
+    extensions:
+      bold: true
     renderer:
       unsafe: true
   highlight:

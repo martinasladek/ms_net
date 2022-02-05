@@ -1,7 +1,7 @@
 ---
 title: "OLS regression from scratch"
 author: "Martina Sladekova"
-date: '2022-06-05'
+date: '2025-06-05'
 slug: ols-regression-from-scratch
 categories: []
 tags: []
@@ -128,3 +128,6 @@ residual = (data$outcome - pred)
 residual %*% t(residual)
 ```
 
+https://www.youtube.com/watch?v=THzckPB7E8Q 
+
+https://www.khanacademy.org/math/ap-statistics/inference-slope-linear-regression/inference-slope/v/confidence-interval-slope 

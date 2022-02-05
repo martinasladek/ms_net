@@ -1,5 +1,5 @@
 ---
-bio: I study how psychology researchers use stats and whether the stats they use are up for the job.
+bio: I study how psychology researchers use stats and whether the stats they use are fit for purpose.
 education:
   courses:
   - course: PhD in Psychology 

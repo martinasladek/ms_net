@@ -1339,7 +1339,7 @@ pre {
 
 @media (max-width: 575.98px) {
   .table-responsive-sm {
-    display: block;
+    display: table;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; }
@@ -1348,7 +1348,7 @@ pre {
 
 @media (max-width: 767.98px) {
   .table-responsive-md {
-    display: block;
+    display: table;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; }
@@ -1357,7 +1357,7 @@ pre {
 
 @media (max-width: 991.98px) {
   .table-responsive-lg {
-    display: block;
+    display: table;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; }
@@ -1366,7 +1366,7 @@ pre {
 
 @media (max-width: 1199.98px) {
   .table-responsive-xl {
-    display: block;
+    display: table;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; }
@@ -1374,7 +1374,7 @@ pre {
       border: 0; } }
 
 .table-responsive {
-  display: block;
+  display: table;
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch; }
@@ -9509,4 +9509,14 @@ div.chart {
   src: url("/fonts/roboto-mono-v13-latin-regular.eot");
   /* IE9 Compat Modes */
   src: local(""), url("/fonts/roboto-mono-v13-latin-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/roboto-mono-v13-latin-regular.woff2") format("woff2"), url("/fonts/roboto-mono-v13-latin-regular.woff") format("woff"), url("/fonts/roboto-mono-v13-latin-regular.ttf") format("truetype"), url("/fonts/roboto-mono-v13-latin-regular.svg#RobotoMono") format("svg");
+  /* Legacy iOS */ }
+
+/* eb-garamond-regular - latin */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/eb-garamond-v15-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("/fonts/eb-garamond-v15-latin-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/eb-garamond-v15-latin-regular.woff2") format("woff2"), url("/fonts/eb-garamond-v15-latin-regular.woff") format("woff"), url("/fonts/eb-garamond-v15-latin-regular.ttf") format("truetype"), url("/fonts/eb-garamond-v15-latin-regular.svg#EBGaramond") format("svg");
   /* Legacy iOS */ }
