@@ -10,6 +10,7 @@ summary: ''
 authors: []
 lastmod: '2022-02-05T14:23:21Z'
 featured: no
+toc: true
 image:
   caption: ''
   focal_point: ''

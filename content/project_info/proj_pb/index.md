@@ -13,13 +13,13 @@ headless: false
 
 </br>
 
-**Stage:** Manuscript under review.
+**Stage:** Project completed. Accepted for publication in [Psychological Methods](https://www.apa.org/pubs/journals/met). 
 
 </br>
 
 <img style="float: left; margin: 10px 20px 5px 0px;" src="images/pb_hex_small.png" alt="funnel plot of effect sizes plotted against sample sizes. Colour differentiated by statistical significance" width="75"/> 
 
-Statistically significant findings are more likely to get published than non-significant findings, which means that a considerable proportion of research findings ends up unpublished in the researchers' file drawers. Publication bias therefore represents a barrier in the way of accurately synthesising research findings using [meta-analysis](/project_info/proj_ma). A number of statistical methods have been developed in an attempt to address this problem by adjusting the meta-analytic estimates for potential presence of publication bias. 
+Statistically significant findings are more likely to get published than the non-significant ones, which means that a considerable proportion of research findings ends up unpublished in the researchers' file drawers. Publication bias therefore represents a barrier in the way of accurately synthesising research findings using [meta-analysis](/project_info/proj_ma). A number of statistical methods have been developed in an attempt to address this problem by adjusting the meta-analytic estimates for potential presence of publication bias. 
 
 Some of the newer methods include Trim-and-Fill, Precision-Effect Test, Precision-Effect Estimate with Standard Errors, Weighted Average of Adequately Powered Studies, *p*-curve, *p*-uniform, and Selection Models. All of these methods have different strengths and weaknesses, and they will produce adjusted estimates with varying accuracy depending on the situation they are used in. This project examined how the estimates in published meta-analyses change after they are adjusted for the presence of publication bias with one of these methods. 
 
