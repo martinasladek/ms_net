@@ -4,7 +4,7 @@ author: Martina Sladekova
 date: '2022-02-05'
 slug: how-to-set-up-papaja-to-work-with-apa-7-format
 categories: []
-tags: []
+tags: ["reproducibility", "LaTeX"]
 subtitle: ''
 summary: ''
 authors: []
