@@ -1,5 +1,5 @@
 ---
-title: How to set up {papaja} to work with APA 7 format
+title: How to set up {papaja} to work with the APA 7 format
 author: Martina Sladekova
 date: '2022-02-05'
 slug: how-to-set-up-papaja-to-work-with-apa-7-format

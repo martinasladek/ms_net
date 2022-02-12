@@ -1,7 +1,7 @@
 ---
 title: 'TIL: Matching position_jitter() of points and lines in ggplot2'
 author: Martina Sladekova
-date: '2025-09-12'
+date: '2022-02-12'
 slug: til-matching-position-jitter-of-points-and-lines-in-ggplot2
 categories: []
 tags: []
@@ -22,11 +22,15 @@ projects: []
 
 
 
-**TL;DR:** The data used for plotting need to be ordered by id and the grouping variable. The points and lines also need an identical seed setting in the position argument. Full code minus the waffle is at the end of the post. 
+**TL;DR:** 
+
+1. Set identical `width` and `seed` arguments to `position_jitter()` in `geom_path()` and `geom_point()`
+1. Set the correct grouping variable in `aes(group = variable)` in `geom_path` (typically id)
+1. Sort the dataset by the id and the variable on the x axis. 
+
+(jump to the [solution](#the-solution))
 
 <br>
-
-## The problem 
 
 `position_jitter()` in ggplot2 is a great tool for clearly displaying raw data overlaid by the key summary statistics. Take a look at the data below:
 
@@ -1794,9 +1798,8 @@ projects: []
 </tbody>
 </table></div>
 
-<br>
 
-We've got the data in a long format - there are 70 participants, for each one we've for five reaction time (RT) measures at five time points. Note that time point is aligned to the right - this means that `R` is treating it as a numeric variable, and not a factor or a character vector[^1]. That's fine for this example. If we want to see how the RTs differ at each time point, we could do a simple means plot with bootstrapped confidence intervals: 
+We've got the data in a long format - there are 70 individuals, each provides a reaction time measure at five time points. Note that time point is aligned to the right - this means that `R` is treating it as a numeric variable, and not a factor or a character vector[^1]. That's fine for this example. If we want to see how the overall reaction times differ at each time point, we could create a simple means plot with bootstrapped confidence intervals: 
 
 
 ```r
@@ -1808,47 +1811,174 @@ data %>%
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" />
 
-<br>
-
-A plot like this makes is way too easy to ignore potentially messy aspects of our data. We can add `geom_point()` and use `position = position_jitter()` to scatter the position of the points a little so they're not stacked on top of each other. I'm also changing the `alpha` argument to make the points more see-through. 
+A plot like this makes is way too easy to ignore potentially messy aspects of our data. We can add `geom_point()` and use `position = position_jitter()` to scatter the position of the points a little so they're not stacked on top of each other. I've added the `seed` argument to make sure the points are scattered in the same way every time I run the plot. I'm also changing the `alpha` argument to make the points more see-through. 
 
 
 ```r
 data %>% 
   ggplot2::ggplot(., aes(y = rt, x = time)) + 
-  geom_point(alpha = 0.2, position = position_jitter(width = 0.1)) + 
+  geom_point(alpha = 0.2, position = position_jitter(width = 0.1, seed = 3922)) + 
   stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
   theme_bw()
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" />
 
-<br>
 
-That's a little better - now we can see the spread of data at each time point, including level of overlap and any potentially extreme scores. We can also see that the variance increases with time, which could cause issues depending on the kind of model we intend to fit.  
+Now we can see the spread of data at each time point, including the level of overlap and any potentially extreme scores. We can also see that the variance slightly increases with time, which could cause issues depending on the kind of model we want to fit.  
 
-I would normally treat this as a multilevel (or mixed effects) model - where the reaction time data for each time point are nested within the participants. In such context, it can be useful to also plot the lines that link the participants' scores between the time-points. 
+I would normally treat this as a multilevel (or mixed effects) model - where the reaction times for each time point are nested within the participants. In such context, it can be useful to also plot the lines that link the participants' scores between the time-points. We can do this by adding `geom_path()` and specifying the grouping variable (in our case, id) in the aesthetics(`aes(group = id)`): 
 
 
 ```r
 data %>% 
   ggplot2::ggplot(., aes(y = rt, x = time)) +
-  geom_path(size = 0.2, alpha = 0.1) + 
-  geom_point(alpha = 0.2, position = position_jitter(width = 0.1)) + 
+  geom_path(
+    aes(group = id), 
+    size = 0.1, alpha = 0.2
+  ) + 
+  geom_point(alpha = 0.2, position = position_jitter(width = 0.1, seed = 3922)) + 
   stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
   theme_bw()
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" />
+
+Granted, this looks a little cluttered, but the clutter can be interesting - I don't need to be able to track each individual line to see that for some individuals, the reaction times from one time-point to the next go up, while for others they go down (and may go up at the next time point). If I'm fitting a multilevel model, I might want to add the random effect of time to account for this. 
+
+# The problem
+
+If we look at the plot more closely, we can finally see the whole reason behind this mini blog-post: the points and the lines are not connected properly. Each line and each point corresponds to a participant, but the lines have different starting points. We can zoom in on the second time point: 
+
+
+```r
+data %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) +
+  # slightly tweaked sizes and alphas here to make the points easier to see: 
+  geom_path(
+    aes(group = id), 
+    size = 0.4, alpha = 0.5
+  ) + 
+  geom_point(size = 5, alpha = 0.7, position = position_jitter(width = 0.1, seed = 3922)) + 
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  # zoom in: 
+  coord_cartesian(xlim = c(3.5, 4.5),                      
+                  ylim = c(475, 550)) + 
+  theme_bw()
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" />
+
+Yep. This is awful. We haven't actually scattered the paths and they're all going to the "centre" of time point 4. `geom_path` can also work with `position_jitter()` with the `seed` argument, so we can add these to the plot: 
+
+
+```r
+data %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) +
+  # slightly tweaked sizes and alphas here to make the points easier to see: 
+  geom_path(
+    aes(group = id), 
+    size = 0.4, alpha = 0.5, 
+    position = position_jitter(width = 0.1, seed = 3922)
+  ) + 
+  geom_point(size = 5, alpha = 0.7, position = position_jitter(width = 0.1, seed = 3922)) + 
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  # zoom in: 
+  coord_cartesian(xlim = c(3.5, 4.5),                      
+                  ylim = c(475, 550)) + 
+  theme_bw()
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" />
+
+That's... kind of better? At least the paths are now going directly through the points, but this is still not quite right. Some of the points have paths going into them from only one direction. We don't have any missing data, so this can't be right.  
+
+# The solution 
+
+Turns out that, in addition to specifying identical seed for `position_jitter()`, we also need to order the dataset by the grouping variable (id) and the time variable before piping it into `ggplot`:
+
+
+```r
+data %>% 
+  # sor by id and time: 
+  dplyr::arrange(id, time) %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) +
+  # slightly tweaked sizes and alphas here to make the points easier to see: 
+  geom_path(
+    aes(group = id), 
+    size = 0.4, alpha = 0.5, 
+    position = position_jitter(width = 0.1, seed = 3922)
+  ) + 
+  geom_point(size = 5, alpha = 0.7, position = position_jitter(width = 0.1, seed = 3922)) + 
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  # zoom in: 
+  coord_cartesian(xlim = c(3.5, 4.5),                      
+                  ylim = c(475, 550)) + 
+  theme_bw()
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" />
+Much better. Zooming back out: 
+
+
+```r
+data %>% 
+  # sort by id and time: 
+  dplyr::arrange(id, time) %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) +
+  # slightly tweaked sizes and alphas here to make the points easier to see: 
+  geom_path(
+    aes(group = id), 
+    size = 0.1, alpha = 0.2, 
+    position = position_jitter(width = 0.1, seed = 3922)
+  ) + 
+  geom_point(alpha = 0.2, position = position_jitter(width = 0.1, seed = 3922)) +  
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  theme_bw()
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" />
+
+I'll admit, most people might not notice the difference (or care), but I can sleep soundly tonight knowing that I haven't actively contributed to the chaos in the world. I'm all for anarchy, but I draw the line at plots. 
+
+With that, here's some additional code that is completely irrelevant to this post because I can't just leave the plot improperly labelled: 
+
+
+```r
+data %>% 
+  dplyr::arrange(id, time) %>% 
+  dplyr::group_by(id) %>% 
+  dplyr::mutate(
+    rt_col = (rt - lag(rt)) %>% if_else(is.na(.), 0, .)
+  ) %>% 
+  ggplot2::ggplot(., aes(y = rt, x = time)) +
+  geom_path(
+    aes(group = id, colour = lead(rt_col)), 
+    size = 0.1, alpha = 0.6, 
+    position = position_jitter(width = 0.1, seed = 3922)
+  ) + 
+  geom_point(alpha = 0.3, position = position_jitter(width = 0.1, seed = 3922), 
+             colour = "#330075") +  
+  stat_summary(geom = "pointrange", fun.data = "mean_cl_boot") + 
+  scale_colour_viridis_c(option = "A") + 
+  scale_y_continuous(breaks = seq(200, 650, 50)) + 
+  coord_cartesian(ylim = c(200, 650)) + 
+  labs(x = "\nTime point (1-5)", y = "Reaction time (ms)\n", colour = "RT change (ms)\n") + 
+  ggtitle("") + 
+  theme_light() + 
+  theme(
+    axis.title = element_text(face = "bold"), 
+    legend.title = element_text(face = "bold")
+  )
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+
+
 <br>
 
-Granted, this starting to look chaotic, but the chaos can be interesting - I don't need to be able to track each individual line to see that for some participants, the reaction times from one time-point to the next go up, while for others they go down (and may go up at the next time point). If I'm fitting a multilevel model, I might want to add a random effect of time to account for this. 
-
-Though if you look at the plot more closely, you might be able to finally see the whole reason behind this mini-blog: the points and the lines are not connected properly. Each line and each point corresponds to a participant, but the lines have different starting points. We can zoom in on the second time point: 
+<br>
 
 
 
-
-
-
-[^1]: This is also true for SPSS and Excel, and it's the reason why it's almost never a good idea to change the default alignment of the columns. Seeing how columns are aligned can be a helpful debugging hint when the software just won't do what you're asking it to do. Numeric values are aligned to the right. Strings and factors should be aligned to the left.  
+[^1]: This is also true for SPSS and Excel, and it's the reason why it's almost never a good idea to change the default alignment of columns. Seeing how columns are aligned can be a helpful debugging hint when the software just won't do what you're asking it to do. Numeric values are aligned to the right. Strings and factors should be aligned to the left.  
