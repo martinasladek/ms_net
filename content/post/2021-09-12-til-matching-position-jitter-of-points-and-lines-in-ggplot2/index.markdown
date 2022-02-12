@@ -4,7 +4,7 @@ author: Martina Sladekova
 date: '2022-02-12'
 slug: til-matching-position-jitter-of-points-and-lines-in-ggplot2
 categories: []
-tags: []
+tags: ["ggplot2", "dataviz", "R", "coding"]
 subtitle: ''
 summary: ''
 authors: []
