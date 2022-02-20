@@ -207,7 +207,7 @@ monty_df %>%
   theme_minimal()
 ```
 
-Out of 1000 rounds, the player won about 66% of the time if they changed their choice, and only about 33% of the time if they sticked with their original choice. So yes, it is indeed in our benefit to always switch our choice. 
+Out of 1000 rounds, the player won about 66% of the time if they changed their choice, and only about 33% of the time if they sticked with their original choice. So yes, it is indeed to our advantage to always switch our choice. 
 
 As an aside, I should probably add that there are certainly more efficient ways of simulating this, but I find explicit `for` loops helpful for learning about coding because of how transparent they are. The execution time goes sky high as you increase the number of iterations, but that's a puzzle for another day. 
 
@@ -217,4 +217,4 @@ As an aside, I should probably add that there are certainly more efficient ways 
 
 [^2]: Again... never happens in real life. 
 
-[^3]: In this case, either one and *only one* of the doors can be opened by the host in a single round, which is why this counts as a single sequence instead of two.
+[^3]: In this case, either one and *only one* of the doors can be opened by the host in a single round, which is why this counts as a one sequence instead of two.
