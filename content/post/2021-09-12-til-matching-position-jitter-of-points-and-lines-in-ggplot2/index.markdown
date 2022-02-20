@@ -1900,7 +1900,7 @@ Turns out that, in addition to specifying identical seed for `position_jitter()`
 
 ```r
 data %>% 
-  # sor by id and time: 
+  # sort by id and time: 
   dplyr::arrange(id, time) %>% 
   ggplot2::ggplot(., aes(y = rt, x = time)) +
   # slightly tweaked sizes and alphas here to make the points easier to see: 
