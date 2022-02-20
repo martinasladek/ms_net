@@ -10,4 +10,3 @@ menu:
   tutorial
 ---
 
-{{ partial "share-buttons.html" . }}
