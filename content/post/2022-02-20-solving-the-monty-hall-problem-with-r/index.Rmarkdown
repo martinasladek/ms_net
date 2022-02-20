@@ -202,7 +202,7 @@ monty_df %>%
   ggplot2::ggplot(., aes(x = switched, y = perc, fill = won)) + 
   geom_col(position = position_dodge(width = 0.5), width = 0.3, alpha = .90) + 
   scale_fill_manual(values = c("#172541","#e2ad00")) + 
-  labs(x = "\nDid the player switch their choice?", fill = "Did the \nplayer win? ", y = "Percent\n") +
+  labs(x = "\nDid the player switch their choice?", fill = "Did the \nplayer win? ", y = "Percent (%)\n") +
   coord_cartesian(ylim = c(0,100)) + 
   theme_minimal()
 ```

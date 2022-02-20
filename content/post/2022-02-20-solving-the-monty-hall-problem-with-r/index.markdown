@@ -27,7 +27,7 @@ The Monty Hall problem is a statistical puzzle based on an American game show. B
 
 > Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
-What makes the puzzle fun is the fact that the solution goes completely against intuition. At the point of switching, the probability of winning is 50/50 (there is one winning door and one losing door that you can switch to), but the real probability of winning is 2/3rds if you switch your choice and 1/3rd if you don't. Once you know the *why* of the answer, you can feel very smug and wow everyone around you with your fantastic knowledge when the opportunity finally presents itself[^1]. 
+What makes the puzzle fun is the fact that the solution goes completely against intuition. At the point of switching, the probability of winning is 50/50 (there is one winning door and one losing door that you can switch to), but the real probability of winning is 2/3rds if you switch your choice and 1/3rd if you don't. Once you know the *why* of the answer, you can feel very smug and wow everyone around you with your out-of-this-world knowledge when the opportunity finally presents itself[^1]. 
 
 ## General solution
 
@@ -207,21 +207,21 @@ monty_df %>%
   ggplot2::ggplot(., aes(x = switched, y = perc, fill = won)) + 
   geom_col(position = position_dodge(width = 0.5), width = 0.3, alpha = .90) + 
   scale_fill_manual(values = c("#172541","#e2ad00")) + 
-  labs(x = "\nDid the player switch their choice?", fill = "Did the \nplayer win? ", y = "Percent\n") +
+  labs(x = "\nDid the player switch their choice?", fill = "Did the \nplayer win? ", y = "Percent (%)\n") +
   coord_cartesian(ylim = c(0,100)) + 
   theme_minimal()
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
-Out of 1000 rounds, the player won about 66% of the time if they changed their choice, and only about 33% of the time if they sticked with their original choice. So yes, it is indeed in our benefit to always switch our choice. 
+Out of 1000 rounds, the player won about 66% of the time if they changed their choice, and only about 33% of the time if they sticked with their original choice. So yes, it is indeed to our advantage to always switch our choice. 
 
 As an aside, I should probably add that there are certainly more efficient ways of simulating this, but I find explicit `for` loops helpful for learning about coding because of how transparent they are. The execution time goes sky high as you increase the number of iterations, but that's a puzzle for another day. 
 
 <br>  
 
-[^1]: Which is pretty much never, unless you're taking an introductory class in probability or re-watching Brooklyn 99 for the millionth time (which, given that you're sitting here reading a post about a stats problem, you're probably watching all by yourself anyway). 
+[^1]: Which is pretty much never, unless you're taking an introductory class in probability or re-watching Brooklyn 99 for the millionth time (which, given that you're sitting here reading a post about a stats problem, you're probably watching all by yourself, so there's not anyone to wow anyway). 
 
 [^2]: Again... never happens in real life. 
 
-[^3]: In this case, either one and *only one* of the doors can be opened by the host in a single round, which is why this counts as a single sequence instead of two.
+[^3]: In this case, either one and *only one* of the doors can be opened by the host in a single round, which is why this counts as a one sequence instead of two.
