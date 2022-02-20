@@ -36,7 +36,7 @@ The Monty Hall problem is a statistical puzzle based on an American game show. B
 
 > Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
-What makes the puzzle fun is the fact that the solution goes completely against intuition. At the point of switching, the probability of winning is 50/50 (there is one winning door and one losing door that you can switch to), but the real probability of winning is 2/3rds if you switch your choice and 1/3rd if you don't. Once you know the *why* of the answer, you can feel very smug and wow everyone around you with your fantastic knowledge when the opportunity finally presents itself[^1]. 
+What makes the puzzle fun is the fact that the solution goes completely against intuition. At the point of switching, the probability of winning is 50/50 (there is one winning door and one losing door that you can switch to), but the real probability of winning is 2/3rds if you switch your choice and 1/3rd if you don't. Once you know the *why* of the answer, you can feel very smug and wow everyone around you with your out-of-this-world knowledge when the opportunity finally presents itself[^1]. 
 
 ## General solution
 
@@ -213,7 +213,7 @@ As an aside, I should probably add that there are certainly more efficient ways 
 
 <br>  
 
-[^1]: Which is pretty much never, unless you're taking an introductory class in probability or re-watching Brooklyn 99 for the millionth time (which, given that you're sitting here reading a post about a stats problem, you're probably watching all by yourself anyway). 
+[^1]: Which is pretty much never, unless you're taking an introductory class in probability or re-watching Brooklyn 99 for the millionth time (which, given that you're sitting here reading a post about a stats problem, you're probably watching all by yourself, so there's not anyone to wow anyway). 
 
 [^2]: Again... never happens in real life. 
 
