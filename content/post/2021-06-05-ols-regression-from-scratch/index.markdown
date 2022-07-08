@@ -1,14 +1,14 @@
 ---
 title: "OLS regression from scratch"
 author: "Martina Sladekova"
-date: '2022-06-05'
+date: '2025-06-05'
 slug: ols-regression-from-scratch
 categories: []
 tags: []
 subtitle: ''
 summary: ''
 authors: []
-lastmod: '2022-06-05'
+lastmod: '2025-06-05'
 featured: no
 image:
   caption: ''
